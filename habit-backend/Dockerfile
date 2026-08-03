@@ -6,8 +6,8 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Run environment
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/target/habit-backend-1.0.0.jar app.jar
-EXPOSE 8080 10000
-ENTRYPOINT ["sh", "-c", "java -Xmx384m -Xms128m -Dserver.port=${PORT:-8080} -jar app.jar"]
+EXPOSE 8080
+ENTRYPOINT ["java", "-Xmx384m", "-Xms128m", "-jar", "app.jar"]
