@@ -2,11 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Habit Trigger Analyzer — Discover what triggers your habits. Track mood, weather, location and time of day to understand your behavioral patterns." />
     <meta name="theme-color" content="#0a0a12" />
     <title>HabitTrigger — Understand What Drives Your Habits</title>
+    <script>
+      (function() {
+        const from = localStorage.getItem('theme_from');
+        const to = localStorage.getItem('theme_to');
+        const gradient = localStorage.getItem('theme_gradient');
+        if (from && to && gradient) {
+          document.documentElement.style.setProperty('--accent-from', from);
+          document.documentElement.style.setProperty('--accent-to', to);
+          document.documentElement.style.setProperty('--accent-gradient', gradient);
+          document.documentElement.style.setProperty('--border-accent', from + '59');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

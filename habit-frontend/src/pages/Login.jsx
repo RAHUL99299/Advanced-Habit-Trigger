@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import logo from '../assets/logo.png';
 
 export default function Login() {
   const { login } = useAuth();
@@ -28,7 +29,7 @@ export default function Login() {
     <div className="auth-page">
       <div className="auth-card">
         <div className="auth-logo">
-          <span className="logo-icon">⚡</span>
+          <img src={logo} alt="HabitTrigger" className="auth-logo-img" />
           <h1>HabitTrigger</h1>
           <p className="auth-subtitle" style={{ marginBottom: 0 }}>Understand what drives your habits</p>
         </div>

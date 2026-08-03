@@ -1,44 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* ============================================
    DESIGN TOKENS
    ============================================ */
 :root {
   /* Colors */
-  --bg-primary: #0a0a12;
-  --bg-secondary: #0f0f1a;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-card-hover: rgba(255, 255, 255, 0.07);
-  --bg-input: rgba(255, 255, 255, 0.06);
+  --bg-primary: #06050c;
+  --bg-secondary: #0b0916;
+  --bg-card: rgba(18, 16, 32, 0.45);
+  --bg-card-hover: rgba(28, 24, 52, 0.65);
+  --bg-input: rgba(12, 10, 22, 0.7);
 
   /* Glass effect */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-blur: blur(16px);
+  --glass-bg: rgba(18, 16, 32, 0.45);
+  --glass-border: rgba(139, 92, 246, 0.12);
+  --glass-blur: blur(24px);
 
-  /* Brand Gradient */
-  --accent-from: #6366f1;
-  --accent-to: #8b5cf6;
-  --accent-gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
-  --accent-glow: 0 0 40px rgba(99, 102, 241, 0.25);
+  /* Brand Gradient (Matches the gems and gold glow of the new logo) */
+  --accent-from: #a855f7;
+  --accent-to: #f97316;
+  --accent-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%);
+  --accent-glow: 0 0 50px rgba(168, 85, 247, 0.2), 0 0 30px rgba(249, 115, 22, 0.1);
 
   /* Status Colors */
   --success: #10b981;
-  --success-glow: rgba(16, 185, 129, 0.2);
+  --success-glow: rgba(16, 185, 129, 0.15);
   --warning: #f59e0b;
-  --warning-glow: rgba(245, 158, 11, 0.2);
+  --warning-glow: rgba(245, 158, 11, 0.15);
   --danger: #ef4444;
-  --danger-glow: rgba(239, 68, 68, 0.2);
+  --danger-glow: rgba(239, 68, 68, 0.15);
   --info: #3b82f6;
 
   /* Text */
-  --text-primary: #f1f1f5;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
 
   /* Borders */
-  --border: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(99, 102, 241, 0.4);
+  --border: rgba(255, 255, 255, 0.06);
+  --border-accent: rgba(168, 85, 247, 0.35);
 
   /* Spacing */
   --radius-sm: 8px;
@@ -48,14 +48,14 @@
   --radius-full: 999px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
-  --shadow-accent: 0 4px 24px rgba(99, 102, 241, 0.2);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.7);
+  --shadow-accent: 0 4px 24px rgba(168, 85, 247, 0.15);
 
   /* Transitions */
-  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============================================
@@ -73,7 +73,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
@@ -81,8 +81,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.07) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+    radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(249, 115, 22, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
   background-attachment: fixed;
 }
 
@@ -96,19 +97,20 @@ body {
    TYPOGRAPHY
    ============================================ */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
 }
 
-h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
-h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
-h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
+h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 750; }
+h3 { font-size: clamp(1.15rem, 2.5vw, 1.6rem); font-weight: 650; }
 
 p { color: var(--text-secondary); }
-a { color: var(--accent-from); text-decoration: none; transition: var(--transition); }
-a:hover { color: var(--accent-to); }
+a { color: #c084fc; text-decoration: none; transition: var(--transition); }
+a:hover { color: #fb923c; }
 
 /* ============================================
    LAYOUT
@@ -345,6 +347,12 @@ select.form-control option {
   font-size: 1.4rem;
 }
 
+.brand-logo-img {
+  height: 32px;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
 .navbar-links {
   display: flex;
   align-items: center;
@@ -389,6 +397,18 @@ select.form-control option {
   font-size: 0.85rem;
   color: white;
   flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.nav-profile-link {
+  transition: var(--transition);
+}
+.nav-profile-link:hover .user-avatar {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+.nav-profile-link:hover .navbar-user-name {
+  color: var(--accent-from) !important;
 }
 
 /* ============================================
@@ -579,6 +599,14 @@ tbody tr:hover {
   font-size: 2.5rem;
   display: block;
   margin-bottom: 0.5rem;
+}
+
+.auth-logo-img {
+  height: 80px;
+  border-radius: 12px;
+  margin: 0 auto 1rem auto;
+  display: block;
+  object-fit: contain;
 }
 
 .auth-subtitle {

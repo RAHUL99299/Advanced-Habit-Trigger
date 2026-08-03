@@ -8,6 +8,7 @@ import Habits from './pages/Habits';
 import HabitDetail from './pages/HabitDetail';
 import LogHabit from './pages/LogHabit';
 import Insights from './pages/Insights';
+import Profile from './pages/Profile';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/habits" element={<ProtectedRoute><Habits /></ProtectedRoute>} />
           <Route path="/habits/:id" element={<ProtectedRoute><HabitDetail /></ProtectedRoute>} />
           <Route path="/habits/:id/log" element={<ProtectedRoute><LogHabit /></ProtectedRoute>} />
