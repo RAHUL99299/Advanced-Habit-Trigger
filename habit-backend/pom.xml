@@ -58,20 +58,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- PostgreSQL (for Supabase & Render DB) -->
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- H2 In-Memory DB (Fallback) -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
         <!-- JWT (JJWT) -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
